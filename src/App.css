@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #877f6c;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Verdana;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 1px 1px 10px 1px #134c76; */
+  border-radius: 7px;
+  background-color: blanchedalmond;
+  min-width: 440px;
+  min-height: 320px;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: #646a58;
+  color: white;
+  font-size: 20px;
+}
+
+.card-body {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-footer {
+  min-height: 40px;
+  margin: 5px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: #646a58;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.unit-control {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.unit {
+    display: inline-flex;
+    background-color: #646a58;
+    border:1px;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 35px;
+    color: white;
+    border-radius: 3px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.converter {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.coverter-title {
+  color: #caad5f;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.input-number {
+  font-size: 32px;
+  max-width: 100px;
+  flex: 1;
+  display: inline-block;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #89916b;
+  font-family: Courier;
+  color: #89916b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input-number.readonly{
+  border: 0px;
+}
+
+.exchange-icon {
+  color: #646a58;
+  cursor: pointer;
+}
+
+.angle-icon {
+  color: #caad5f;
+  margin-top:15px;
 }

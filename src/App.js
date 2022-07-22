@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import UnitControl from "./components/UnitControl";
+import CardFooter from "./components/CardFooter";
+import UnitConverter from "./components/UnitConverter";
 
 function App() {
+  const [inputValue, setInputValue] = useState(0);
+  const [inputUnit, setInputUnit] = useState("Mbps");
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setInputValue(value);
+  };
+  const handleCovertClick = () => {
+    setInputUnit(inputUnit === "Mbps" ? "MB/s" : "Mbps");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="card-header">Network Speed Converter</div>
+      <div className="card-body">
+        <UnitControl
+          inputUnit={inputUnit}
+          handleCovertClick={handleCovertClick}
+        />
+        <UnitConverter
+          inputValue={inputValue}
+          inputUnit={inputUnit}
+          handleInputChange={handleInputChange}
+        />
+      </div>
+      <CardFooter inputValue={inputValue} inputUnit={inputUnit} />
     </div>
   );
 }
